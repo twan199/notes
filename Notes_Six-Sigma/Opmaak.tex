@@ -1,0 +1,89 @@
+\documentclass[11pt,a4paper, fleqn]{article}
+\usepackage{amsmath,europs,booktabs,amssymb,bm,soul}
+%\usepackage[euler-digits,euler-hat-accent]{eulervm}
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{baskervald}%\usepackage{lmodern}
+%\usepackage[T1]{fontenc}
+%\usepackage{tgheros}
+%\renewcommand{\familydefault}{\sfdefault} 
+\usepackage{float}
+\usepackage{url}
+\usepackage{eurosym}
+\usepackage[right=2.8cm,left=2.8cm,top=3.2cm,bottom=2.8cm]{geometry}
+\usepackage[FIGBOTCAP]{subfigure}
+\usepackage[english]{babel} %LANGUAGE
+%\usepackage{ucs} 
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{chngpage}
+%\usepackage{cite}
+\usepackage{appendix}
+\usepackage[hang,small,bf,figurewithin=section,tablewithin=section]{caption}
+\usepackage{rotating}
+\usepackage{caption}
+\usepackage{picins}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{xspace}
+\usepackage[absolute]{textpos}
+\usepackage{hyperref}
+\usepackage[hyphenbreaks]{breakurl}
+\usepackage[table]{xcolor}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\definecolor{myblue}{rgb}{0,0,0.4}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\usepackage{listings}
+\setlength{\parskip}{0.1ex}
+\setlength{\parindent}{0mm}
+\newcommand{\degree}{\ensuremath{^{\circ}}\xspace}
+\newcommand{\HRule}{\rule{--\linewidth}{0.5mm}}
+%\numberwithin{equation}{section}
+%\numberwithin{figure}{section}
+%\numberwithin{table}{section}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\usepackage{fancyhdr}
+\usepackage{graphicx} % To be able to edit graphics
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{longtable}
+\usepackage[nottoc]{tocbibind}
+\usepackage[makeroom]{cancel}
+\usepackage[style=ieee,sorting=nyt]{biblatex}
+\usepackage{mhchem}
+\usepackage{siunitx}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+\usepackage{inconsolata}
+
+%\usepackage{draftwatermark} %Watermark
+\newcommand{\tightoverset}[2]{\mathop{#2}\limits^{\vbox to -.5ex{\kern-0.75ex\hbox{$#1$}\vss}}}
+  
+\lstset{breaklines=true,
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  language=Matlab}
+
+%\lstset{
+%  basicstyle=\ttfamily,
+%  columns=fullflexible,
+%  frame=single,
+%  breaklines=true,
+%  language=Matlab
+%}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesection\ #1}{}}
+\fancyhead{}
+%\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+%\lhead{\small \thepage}
+\rfoot{\small T.M.J. Bouts}
+\lfoot{\small 4BM40}
+\cfoot{\small \thepage}
