@@ -1,17 +1,8 @@
-\input{Opmaak.tex}
+\documentclass{notes}
 \begin{document}
-\setcounter{page}{1}
-\pagenumbering{arabic}
-\vspace*{-2.5cm}
-\begin{center}
-\large{\textsf{Data Analytics for Lean Six Sigma \\
-T.M.J. Bouts \\
-\today}}
-\section*{Week1}
-\setcounter{section}{1}
-\setcounter{subsection}{1}
-\end{center}
-\subsubsection{DMAIC}
+\mytitle{Data Analytics for Lean Six Sigma}
+\section{Week1}
+\subsection{DMAIC}
 \begin{itemize}
     \item Define
     \item Measure
@@ -21,7 +12,7 @@ T.M.J. Bouts \\
 \end{itemize}
 \subsection{Measure}
 Goal: Make the problem quantifiable and measurable. How to operationalize the problem. 
-Find process metrics that are relevant for the project objectives. What characteristcs should you measure.
+Find process metrics that are relevant for the project objectives. What characteristics should you measure.
 
 \emph{Example}
 Mondays process wafer making runs worse than other days? Why is that. What to measure time --> means Duration of start up and Start time production and runs worse --> Amount of scrap per day and volume per day.
@@ -29,23 +20,77 @@ Mondays process wafer making runs worse than other days? Why is that. What to me
 These variables are called \textbf{CTQ}'s. 
 \textbf{CTQ} (Critical to quality characteristics): A property of a process, process or service that is relevant to the project objective.
 How to find CTQ:
-ask yourself: What metric do I want to change? Will the project be succesful if I do that / Does it solve the problem. Other names Y-variable, Dependend variable or Outcome variable.
+ask yourself: What metric do I want to change? Will the project be successful if I do that / Does it solve the problem. Other names Y-variable, Dependent variable or Outcome variable.
 
 Examples are \textit{Processing time} time it takes to do a process (often minutes) and \textit{Throughput time} total duration of processing the change (days). Be critical to determination of CTQ: really contribute to goal?
 
 Unit vs measurement unit.
-Unit: People, objects, phenonema: the things you collect data on. Measure speed highway --> unit is vehicles. Also known as Experimental unit, observational unit, unit of analysis, case, subject.
-Measurement unit: defines what a measument means. The properties of things you collect data on --> km/h
+Unit: People, objects, phenomena: the things you collect data on. Measure speed highway --> unit is vehicles. Also known as Experimental unit, observational unit, unit of analysis, case, subject.
+Measurement unit: defines what a measurement means. The properties of things you collect data on --> km/h
 
 Why sampling is sometimes good idea: 1) cannot measure all data points, 2) when it provides more precise information about a part of the population instead of vague info about all population. 
-Sample has to be resprensentative. 
+Sample has to be representative. 
 
-Dataset: unit in row, variables in columns. Variables are properties that are measured.
+Data-set: unit in row, variables in columns. Variables are properties that are measured.
 
 % \begin{figure}[H] 
 % \caption{Linear Molecule from PGOPHER displaying the rovibrational spectrum}
 % \centering
 % \includegraphics[scale=2]{figure.png}
 % \label{Figure}
+\section{Week 2}
+Numerical vs Categorical data
+Numerical contains more information.
+Amount of datapoints needed
+\begin{itemize}
+    \item Categorical CTQ: 300
+    \item Numerical CTQ: 30
+\end{itemize}
+Difference in visualizing:
+\begin{itemize}
+    \item Categorical CTQ: Pie, bar, pareto chart
+    \item Numerical CTQ: Histogram, boxplot
+\end{itemize}
+
+Before you analyse data: describtive statistics (mean, se mean, stdev, min, q1, median, q3, max)
+Range = max - min
+Interquartile range (IQR) = q3 - q1
+
+80-20 principle: focus on few vital issues instead of many trivial
+
+\begin{tabular}{l|l l}
+Plot type & x-variable & y-variable (CTQ) \\ \hline
+Scatterplot & Numerical & Numerical \\
+Boxplot & Categorical & Numerical \\
+Boxplot with groups (transposed) & Numerical & Categorical \\
+Stacked bar chart or cross tabulation & Categorical & Categorical \\
+\end{tabular}
+\\
+\begin{tabular}{l|l l}
+Regression type & x-variable & y-variable (CTQ) \\ \hline
+Regression & Numerical & Numerical \\
+ANOVA (Normal dist.) or Kruskal-Wallis (Nonnorm.) & Categorical & Numerical \\
+Logistic regression & Numerical & Categorical \\
+Chi square test & Categorical & Categorical \\
+\end{tabular}
+Few data points --> two sample student t-test can be used.
+
+Regression steps
+\begin{enumerate}
+    \item Fitted line plot: Fit a line (linear regression) $y = a + bX$ that describes the relationship
+    \item Regression: Is the evidence for this relationship significant
+    \item Residuals: Are the residuals normal. Are there any outliers or irregularities
+    \item Optional - Prediction interval: Bounds for 95\% of data points
+\end{enumerate}
+if $p<0.05$ the relationship is significant. $R^2$ should be large.
+Quadratic regression is $y=a+bX-cX^2$
+
+Instead of normal distribution, for throughput times or processing times, a Weibull distribution can be used or lognormal. 
+Probability plot, lowest AD value fits best. Probaility plot tells you which distribution to use to model the plot.
+
+Percentages based on counting need at least a sample size of 300.
+
+Empirical CDF can create probility of the population.
+
 
 \end{document}
