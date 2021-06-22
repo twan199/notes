@@ -3,6 +3,7 @@
 \LoadClass[11pt,a4paper, fleqn]{article}
 \RequirePackage{amsmath,booktabs,amssymb,bm,soul}
 \RequirePackage{mathpazo}
+\RequirePackage{enumitem}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{baskervald}
 \RequirePackage{float}
@@ -23,59 +24,32 @@
 \RequirePackage{xspace}
 \RequirePackage[absolute]{textpos}
 \RequirePackage{hyperref}
-\RequirePackage[table]{xcolor}
+\RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{\TPHorizModule}
-\definecolor{myblue}{rgb}{0,0,0.4}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\RequirePackage{listings}
-\setlength{\parskip}{0.1ex}
-\setlength{\parindent}{0mm}
-\newcommand{\degree}{\ensuremath{^{\circ}}\xspace}
-\newcommand{\HRule}{\rule{--\linewidth}{0.5mm}}
-%\numberwithin{equation}{section}
-%\numberwithin{figure}{section}
-%\numberwithin{table}{section}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-\RequirePackage{fancyhdr}
+\RequirePackage{listings} % code printer
+\setlength{\parskip}{1ex} % space after paragraph
+\setlength{\parindent}{0mm} % Paragraph indent
+\newcommand{\degree}{\ensuremath{^{\circ}}\xspace} % degree sign
+\newcommand{\HRule}{\rule{--\linewidth}{0.5mm}} % Vertical rule
+\RequirePackage{fancyhdr} % Needed for footer
 \RequirePackage{graphicx} % To be able to edit graphics
 \RequirePackage{caption}
 \RequirePackage{xfrac}
 \RequirePackage{longtable}
 \RequirePackage[nottoc]{tocbibind}
-\RequirePackage[makeroom]{cancel}
+\RequirePackage[makeroom]{cancel} % To be able to do is not equal to
 \RequirePackage[style=ieee,sorting=nyt]{biblatex}
 \RequirePackage{siunitx}
-\RequirePackage{inconsolata}
+\RequirePackage{inconsolata} % Mono font
 
-%\RequirePackage{draftwatermark} %Watermark
-\newcommand{\tightoverset}[2]{\mathop{#2}\limits^{\vbox to -.5ex{\kern-0.75ex\hbox{$#1$}\vss}}}
-  
-\lstset{breaklines=true,
-  basicstyle=\ttfamily,
-  columns=fullflexible,
-  frame=single,
-  breaklines=true,
-  language=Matlab}
-
-%\lstset{
-%  basicstyle=\ttfamily,
-%  columns=fullflexible,
-%  frame=single,
-%  breaklines=true,
-%  language=Matlab
-%}
-\pagestyle{fancy}
+\pagestyle{fancy} % Needed for page numbering
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
 \renewcommand{\subsectionmark}[1]{\markright{\thesection\ #1}{}}
-\fancyhead{}
-%\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-%\lhead{\small \thepage}
-\cfoot{\small \thepage}
+\fancyhead{} % Modify header
+\renewcommand{\headrulewidth}{0pt} % Line top
+\renewcommand{\footrulewidth}{0pt} % Line below
+\cfoot{\small \thepage} % Page numbering
 \setcounter{page}{1}
 \pagenumbering{arabic}
 \newcommand{\mytitle}[1]{\begin{center}
@@ -83,3 +57,13 @@
 T.M.J. Bouts \\
 \today}}
 \end{center}}
+
+\RequirePackage{tcolorbox}
+\newenvironment{example}[1][Gray]
+{
+\begin{center}\begin{minipage}{0.95\textwidth}
+\begin{tcolorbox}[colframe=#1,colback=LightGrey!25]
+\textbf{\textsf{Example: }}\setlength{\baselineskip}{1\baselineskip}% 
+}   
+{\end{tcolorbox}\end{minipage}\end{center}}
+\renewcommand{\thefootnote}{\roman{footnote}}
